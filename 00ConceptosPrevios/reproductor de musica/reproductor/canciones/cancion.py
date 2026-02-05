@@ -28,9 +28,10 @@ class Cancion:
     def no_reproducciones(self) -> int:
         return self.__no_reproducciones
 
-    @no_reproducciones.setter
-    def no_reproducciones(self, no_reproducciones: int) -> None:
-        self.__no_reproducciones = no_reproducciones
+    # ALGM: En principio el número de veces que se reproduce solo se debería modificar por reproducir_cancion
+    # @no_reproducciones.setter
+    # def no_reproducciones(self, no_reproducciones: int) -> None:
+    #     self.__no_reproducciones = no_reproducciones
 
     def __str__(self) -> str:
         return f"({self.__titulo}, {self.__duracion}, {self.__no_reproducciones})"

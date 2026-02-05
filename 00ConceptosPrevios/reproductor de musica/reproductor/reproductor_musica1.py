@@ -9,10 +9,12 @@ class ReproductorMusica:
 
     def __str__(self) -> str:
         result: str = "("
-        for cancion in self.__canciones:
-            result += str(cancion) + ", "
-
-        return f"{result[0:-2]}), punt={self.__canciones[self.__puntero]}"
+        end: str = ", "
+        for i in range(len(self.__canciones) - 1):
+            result += str(self.__canciones[i]) + end
+        result += ")" if len(self.__canciones) < 1 else\
+            f"{str(self.__canciones[-1])}), punt={self.__canciones[self.__puntero]} "
+        return result
 
     def insertar_canciones(self, canciones: list[Cancion]) -> None:
         """
