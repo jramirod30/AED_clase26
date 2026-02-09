@@ -15,6 +15,7 @@ print(b)
 b.print_public()
 b.print_protected()
 # b.print_private() # <- runtime error: __private_attrib is not defined in class B
+# print(f"Printing b: {b}")
 c.print_public()
 c.print_protected()
 # print (a.__private_attrib) # <-- runtime error: __private_attrib is a private attribute in class A

@@ -27,18 +27,6 @@ class Person:
         """
         return f"Name: {self.__name} surname: {self.__surname} age: {self.__age}"
 
-    def __eq__(self, other) -> bool:
-        """
-        Overwrite operator ==
-        """
-        return self.__name == other.__name and self.__surname == other.__surname \
-            and self.__age == other.__age
-
-    def __lt__(self, other):
-        return self.__surname < other.__surname or \
-               (self.__surname == other.__surname and
-                self.__name < other.__name)
-
     """
     Properties definition
     """

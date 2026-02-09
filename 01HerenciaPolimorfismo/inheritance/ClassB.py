@@ -13,5 +13,5 @@ class B(A):
         print(f"protected attribute {self._protected_attrib}")
 
     def print_private(self) -> None:
-        self.__private_attrib
+        # self.__private_attrib = "hiding private attribute from father"
         print(f"private attribute {self.__private_attrib}")
