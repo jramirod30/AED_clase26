@@ -1,6 +1,3 @@
-from typing import override
-
-#from .figure import IFigure
 import math
 
 
