@@ -1,0 +1,6 @@
+- IncorrectAge: Personas cuando la edad es menor que cero o superior a 130
+- IncorrectSalary: Employee si el salario anual está por debajo del SMI (16576)
+- IncorrectBonus: Manager si el bonus es inferior a 100
+
+Se ha de actualizar los comentarios del código para reflejar las nuevas precondiciones de las clases
+También se deben completar los try de testException
