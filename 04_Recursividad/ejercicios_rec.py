@@ -35,3 +35,43 @@ def multiplicar10_2(lista: list[int], i: int) -> list[int]:
 
 print(multiplicar10_2([1, 2, 3], 2))
 
+
+def posiciones_recursividad[T](lista: list[T], dato: T, i: int = 0) \
+        -> list[int]:
+    if len(lista) == i:
+        return []
+    elif lista[i] == dato:
+        return [i] + posiciones_recursividad(lista, dato, i + 1)
+    else:
+        return posiciones_recursividad(lista, dato, i + 1)
+
+
+print(posiciones_recursividad([1, 2, 3, 3, 3, 3, 4, 5], 3))
+
+
+def posiciones_recursividad1[T](lista: list[T], dato: T, i: int) \
+        -> list[int]:
+    if i < 0:
+        return []
+    elif lista[i] == dato:
+        aux: list[int] = posiciones_recursividad1(lista, dato, i - 1)
+        aux.append(i)
+        return aux
+    else:
+        return posiciones_recursividad1(lista, dato, i - 1)
+
+
+print(posiciones_recursividad1([1, 2, 3, 3, 3, 3, 4, 5], 3, 7))
+
+
+def buscar_indice[T](lista: list[T], elem: T, i: int = 0,
+                     sol: list[int] = []) \
+        -> list[int]:
+    if len(lista) == i:
+        return sol
+    if lista[i] == elem:
+        sol.append(i)
+    return buscar_indice(lista, elem, i + 1, sol)
+
+
+print(buscar_indice([1, 2, 3, 3, 3, 3, 4, 5], 3))
