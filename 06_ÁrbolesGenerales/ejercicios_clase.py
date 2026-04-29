@@ -1,5 +1,5 @@
 from tads import IGeneralTree, IPosition, LinkedGeneralTree, \
-                  ITree
+    ITree
 
 tree: IGeneralTree[int] = LinkedGeneralTree()
 p1: IPosition[int] = tree.add_root(1)
@@ -15,6 +15,7 @@ tree.add_child_first(tree.add_child_last(p3, 8), 9)
 
 print(tree)
 
+
 def contar_nodos_internos[T](gtree: ITree[T]) -> int:
     def contar_nodos_internos_aux[T](pos: IPosition) -> int:
         total: int = 0
@@ -26,9 +27,14 @@ def contar_nodos_internos[T](gtree: ITree[T]) -> int:
             return total
         else:
             return 0
+
     return contar_nodos_internos_aux(gtree.root)
 
 
 print(contar_nodos_internos(tree))
 
+
 def depth[T](gtree: ITree[T], p: IPosition[T]) -> int:
+    if gtree.root == p:
+        return 0
+    return 1 + depth(gtree, gtree.parent(p))
